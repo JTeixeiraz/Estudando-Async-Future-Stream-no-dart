@@ -55,7 +55,7 @@ return Future.delayed(Duration(seconds: 2),(){
   print('== Buscar dados da web ==');
   print('Digite a URL');
   String url = stdin.readLineSync()??"";
-  Future resultado = buscarDadosWeb(url);
+  Future resultado = await buscarDadosWeb(url);
   print('url: $resultado');
   throw Exception('algo inesperado ocorreu');
 }).then((_){
@@ -66,7 +66,7 @@ return Future.delayed(Duration(seconds: 2),(){
 }
 
 Future<String> buscarDadosWeb(String url)async{
-  Future.delayed(Duration(seconds: 3));
+  await Future.delayed(Duration(seconds: 3));
   if (url == "dart") {
     return url;
   }else{
