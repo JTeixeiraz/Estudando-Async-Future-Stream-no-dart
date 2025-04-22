@@ -55,7 +55,7 @@ return Future.delayed(Duration(seconds: 2),(){
   print('== Buscar dados da web ==');
   print('Digite a URL');
   String url = stdin.readLineSync()??"";
-  Future resultado = await buscarDadosWeb(url);
+  Future resultado = buscarDadosWeb(url);
   print('url: $resultado');
   throw Exception('algo inesperado ocorreu');
 }).then((_){
